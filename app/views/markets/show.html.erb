@@ -1,0 +1,19 @@
+<h2>Market <%= @market.id %></h2>
+
+<p>
+  <%= link_to "Return to Markets Overview", markets_path %>
+</p>
+
+<p>
+  <%= link_to "Edit this Market entry", edit_market_path %>
+</p>
+
+<ul>
+  <li>ID: <%= @market.ref_id %> </li>
+  <li>Name: <%= @market.name %></li>
+  <li>Address: <%= @market.address %></li>
+  <li>City: <%= @market.city %></li>
+  <li>County: <%= @market.county %></li>
+  <li>State: <%= @market.state %></li>
+  <li>Zip: <%= @market.zip %></li>
+</ul>
