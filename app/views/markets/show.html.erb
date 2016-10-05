@@ -20,4 +20,10 @@
 
 <h3>Vendors</h3>
 
-vendors_all(@market.ref_id)
+<% @vendors.each do |vendor| %>
+<ul>
+  <li>ID: <%= vendor.ref_id %> </li>
+  <li>Name: <%= vendor.name %></li>
+  <li>Number of Employees: <%= vendor.num_employees %></li>
+</ul>
+<% end %>
