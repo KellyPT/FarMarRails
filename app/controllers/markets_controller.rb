@@ -2,13 +2,22 @@ class MarketsController < ApplicationController
   def overview
   end
 
+  def view_markets # show all markets
+    @markets = Market.all
+  end
+
+  def view_market # show a market
+    @market = Market.find(params[:id])
+    @vendors = @market.vendors
+  end
+
   def index
     @markets = Market.all
   end
 
   def show
     @market = Market.find(params[:id])
-    @vendors = @market.vendors
+    @vendors = @market.all_vendors
   end
 
   def new

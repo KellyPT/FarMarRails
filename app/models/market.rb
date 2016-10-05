@@ -3,7 +3,7 @@ class Market < ActiveRecord::Base
 
   validates :ref_id, uniqueness: true
 
-  def self.vendors
-    vendors
+  def all_vendors
+    self.vendors
   end
 end

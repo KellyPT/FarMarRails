@@ -1,0 +1,14 @@
+<h1>ALL MARKETS</h1>
+
+<p>
+  <%= link_to "Return to Homepage", root_path %>
+</p>
+
+<p>
+  <% @markets.each do |market| %>
+    <p>
+      <%= "Market #{market.ref_id}: #{market.name}" %>
+      <%= link_to "Details", view_market_path(market) %>
+    </p>
+  <% end %>
+</p>
