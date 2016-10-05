@@ -1,0 +1,15 @@
+<h1>I'm a partial</h1>
+
+<%= form_for @vendor do |v| %>
+  <p><%= v.label :name %>
+  <%= v.text_field :name %></p>
+
+  <p><%= v.label :num_employees %>
+  <%= v.text_field :num_employees %></p>
+
+  <p>Add market id, etc.</p>
+
+  <p>
+    <%= v.submit "Submit" %>
+  </p>
+<% end %>

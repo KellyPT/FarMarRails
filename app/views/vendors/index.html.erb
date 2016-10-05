@@ -1,0 +1,26 @@
+<%# = link_to "Products", vendor_products_path %>
+
+<%# = link_to "Sales", vendor_sales_path %>
+
+
+<h1>all of the vendors</h1>
+
+<ul>
+  <% @vendors.each do |v| %>
+    <p>
+      <li>
+
+          <strong>
+          <%= "#{ v.name.capitalize }: " %>
+          </strong>
+          <%= "Num employees: #{ v.num_employees }" %>
+
+      <%# = link_to "Details here", task_path(t) %>
+      <%= link_to "Edit", edit_vendor_path(v) %>
+
+      <%# = link_to "Delete vendor", task_path(t), method: :delete, data: { confirm: "Are you sure you want to delete the vendor?" } %></li>
+    </p>
+    <% end %>
+</ol>
+
+<%# = link_to "New Task", task_new_path %>
