@@ -4,4 +4,8 @@ class Vendor < ActiveRecord::Base
   has_many :sales
 
   validates :ref_id, uniqueness: true
+
+  def self.products
+    products
+  end
 end
