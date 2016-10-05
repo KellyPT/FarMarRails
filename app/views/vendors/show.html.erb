@@ -1,11 +1,23 @@
 <h1>Vendor: <%= @vendor.name %></h1>
 
-<p><%# = link_to "Edit task", task_edit_path%></p>
 <p>
- <%# = link_to "Mark as completed", task_complete_path %>
+  Reference ID: <%= @vendor.ref_id %>
 </p>
-<p><%# = link_to "Return to full task list", tasks_path %></p>
 
-<p>Products: </p>
+<p>
+  Number of employees: <%= @vendor.num_employees %>
+</p>
 
-<p>Sales: </p>
+<p>
+  Market ID: <%= @vendor.market_id %>
+</p>
+
+<p><%= link_to "Edit vendor", edit_vendor_path(@vendor)%></p>
+
+<p><%= link_to "Return to full vendor list", vendors_path %></p>
+
+<strong>
+  <p>Add Products: </p>
+
+<p>Add Sales: </p>
+</strong>
