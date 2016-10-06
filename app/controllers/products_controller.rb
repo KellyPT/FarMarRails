@@ -20,7 +20,28 @@ class ProductsController < ApplicationController
       puts @product.errors.messages
       render :new
     end
+  end
 
+  def edit
+    @vendor = Vendor.find(params[:vendor_id])
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    @vendor = Vendor.find(params[:vendor_id])
+    @product = Product.find(params[:id])
+    if @product.update(prod_params)
+      # SUCCESS
+      redirect_to vendor_products_path
+    else
+      # NOPE
+      render :edit
+    end
+  end
+
+  def destroy
+    Product.find(params[:id]).destroy
+    redirect_to vendor_products_path
   end
 
   private

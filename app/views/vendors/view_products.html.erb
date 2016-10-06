@@ -1,12 +1,17 @@
-<h1>List of Products associated with <%= @vendor.name %>, Vendor ID: <%= @vendor.ref_id %></h1>
+<h1>List of <%= @vendor.name %>'s Products</h1>
 
 <p>
   <%= link_to "Return to Vendor", vendor_path %>
 </p>
 
+<h2>Products:</h2>
+
 <% @products.each do |product| %>
 <ul>
-  <li>Name: <%= product.name %></li>
+  <li><%= product.name %>
+    <%= link_to "Edit", edit_vendor_product_path(@vendor, product) %>
+    <%= link_to "Delete", vendor_product_path(@vendor, product), method: :delete, data: { confirm: "Are you sure you want to delete the product?" } %>
+</li>
 </ul>
 <% end %>
 
