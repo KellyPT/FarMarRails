@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get '/markets/view', to: 'markets#view_markets', as: 'view_all_markets'
   get '/markets/view/:id', to: 'markets#view_market', as: 'view_market'
   get '/markets/:id/vendors', to: 'markets#view_vendors', as: 'market_view_vendors'
+  get '/vendors/:id/products', to: 'vendors#view_products', as: 'vendor_view_products'
+
 
   resources :markets, except: [:destroy]
 

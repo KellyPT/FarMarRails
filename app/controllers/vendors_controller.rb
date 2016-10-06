@@ -9,6 +9,13 @@ class VendorsController < ApplicationController
     @products = @vendor.products
   end
 
+  def view_products
+    @vendor = Vendor.find(params[:id])
+    @products = @vendor.products
+  end
+
+  # This is double ^^ revisit routes
+
   def new
     @vendor = Vendor.new
   end

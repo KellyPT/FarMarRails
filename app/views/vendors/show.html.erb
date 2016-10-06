@@ -16,15 +16,8 @@
 
 <p><%= link_to "Return to full vendor list", vendors_path %></p>
 
-<h3>Products: </h3>
-<% @products.each do |product| %>
-<ul>
-  <li><%= "#{ product.name }" %> <%#= link_to "Edit", edit_vendor_product_path(product) %>
-</li>
-</ul>
-<% end %>
+<h3>
 
-<%= link_to "Create a new product", new_vendor_product_path(@vendor.ref_id) %>
-
+<%= link_to "PRODUCTS", vendor_view_products_path %></h3>
 
 <p>Add Sales: </p>
