@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'markets#overview'
   get '/markets/view', to: 'markets#view_markets', as: 'view_all_markets'
   get '/markets/view/:id', to: 'markets#view_market', as: 'view_market'
+  get '/markets/:id/vendors', to: 'markets#view_vendors', as: 'market_view_vendors'
 
   resources :markets, except: [:destroy]
 
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
     resources :products
     resources :sales, except: [:destroy, :update, :edit]
   end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
