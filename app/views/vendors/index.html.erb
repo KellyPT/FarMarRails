@@ -1,16 +1,26 @@
 <%= link_to "Create a new vendor", new_vendor_path %>
 
-<h1>all of the vendors</h1>
+<table style="width:100%">
 
-<ul>
+  <tr>
+    <th>
+      All Vendors
+    </th>
+    <th>
+      Update
+    </th>
+  </tr>
+
+
   <% @vendors.each do |v| %>
-    <p>
-      <li>
-        <%= "#{ v.name.capitalize } " %>
 
-      <%= link_to "Details", vendor_path(v) %>
-      <%= link_to "Edit", edit_vendor_path(v) %>
-      <%= link_to "Delete", vendor_path(v), method: :delete, data: { confirm: "Are you sure you want to delete the vendor?" } %></li>
-    </p>
-    <% end %>
-</ul>
+  <tr><td><%= "#{ v.name.capitalize } " %>
+
+    <%= link_to "Details", vendor_path(v) %></td>
+    <td><%= link_to "Edit", edit_vendor_path(v) %>
+    <%= link_to "Delete", vendor_path(v), method: :delete, data: { confirm: "Are you sure you want to delete the vendor?" } %>
+  </td></tr>
+
+  <% end %>
+
+</table>
