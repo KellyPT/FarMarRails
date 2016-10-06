@@ -15,4 +15,6 @@
 </ul>
 <% end %>
 
-<%= link_to "Create a new product", new_vendor_product_path(@vendor.ref_id) %>
+<%= link_to "Create a new product", new_vendor_product_path(@vendor.id) %>
+
+<%= link_to "View list of vendor's sales", vendor_sales_path(@vendor.id) %>
