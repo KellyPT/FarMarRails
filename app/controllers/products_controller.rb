@@ -5,19 +5,22 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
+    @vendor = Vendor.find(params[:vendor_id])
+    @product = @vendor.products.build
   end
 
   def create
-    @product = Product.new(prod_params)
+    @vendor = Vendor.find(params[:vendor_id])
+    @product = @vendor.products.new(prod_params)
     if @product.save
       # SAVED SUCCESSFULLY
+      redirect_to vendor_products_path
     else
       # DID NOT SAVE
+      puts @product.errors.messages
       render :new
     end
 
-    # redirect_to vendors_path
   end
 
   private
