@@ -1,0 +1,32 @@
+<h2>CREATE: </h2>
+<h2>Let's make a new Vendor entry for <%= @market.name %></h2>
+
+<p>
+  <%= link_to "Return to Markets Overview", markets_path%>
+</p>
+
+<p>
+  <%= link_to "Return to #{@market.name}", market_path%>
+</p>
+
+<p>
+  <%= link_to "Return to list of Vendors associated with #{@market.name}", market_view_vendors_path%>
+</p>
+
+<%= form_for @vendor, url: market_post_vendor_path(@market.id) do |v| %>
+  <p><%= v.label :name %>
+  <%= v.text_field :name %></p>
+
+  <p><%= v.label "Reference ID" %>
+  <%= v.text_field :ref_id %></p>
+
+  <p><%= v.label :num_employees %>
+  <%= v.text_field :num_employees %></p>
+
+  <p><%= v.label "Market ID" %>
+  <%= v.text_field :market_id %></p>
+
+  <p>
+    <%= v.submit "Submit" %>
+  </p>
+<% end %>
