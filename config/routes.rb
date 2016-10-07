@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :vendors do
     resources :products, except: [:show]
-    resources :sales, except: [:destroy, :update, :edit]
+    resources :sales, only: [:index, :create, :new]
   end
 
   get '/vendors/:id/products', to: 'vendors#view_products', as: 'vendor_view_products'

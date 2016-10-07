@@ -1,21 +1,3 @@
-
-<h1><%#= @vendor.name products%></h1>
-
-<ul>
-  <%# @products.each do |p| %>
-    <p>
-      <!-- <li> -->
-        <%#= "#{ p.name } " %>
-
-      <%#= link_to "Edit", edit_vendor_product_path(p) %>
-      <%#= link_to "Delete", vendor_product_path(p), method: :delete, data: { confirm: "Are you sure you want to delete the product?" } %>
-      <!-- </li> -->
-    </p>
-    <%# end %>
-</ul>
-
-<%#= link_to "Create a new product", new_vendor_product_path %>
-
 <h1><%= @vendor.name %>'s Products</h1>
 
 <table>
