@@ -4,7 +4,7 @@
 <!-- <ul> -->
 <tr>
 <th>Amount</th>
-<th>Purchase Time</th>
+<th>Purchase Date</th>
 </tr>
 <% total = 0 %>
 <% monthly_sales = [] %>
@@ -12,11 +12,11 @@
 
       <tr>
         <td><%= "$#{sprintf('%.2f' % (s.amount/100.0))}" %></td>
-        <td><%= s.purchase_time %></td>
+        <td><%= s.purchase_time.strftime("%m/%d/%Y") %></td>
         <% total += s.amount %>
       </tr>
 
-      <% if s.purchase_time > DateTime.now.at_beginning_of_month %>
+      <% if s.purchase_time >= DateTime.now.at_beginning_of_month - 24.hours && s.purchase_time <= DateTime.now.at_end_of_month - 24.hours %>
         <% monthly_sales << s %>
       <% end %>
     <% end %>
@@ -32,12 +32,12 @@
   <table>
   <tr>
   <th>Amount</th>
-  <th>Purchase Time</th>
+  <th>Purchase Date</th>
   </tr>
     <% monthly_sales.each do |ms| %>
         <tr>
           <td><%= "$#{sprintf('%.2f' % (ms.amount/100.0))}" %></td>
-          <td><%= ms.purchase_time %></td>
+          <td><%= ms.purchase_time.strftime("%m/%d/%Y") %></td>
           <% monthly_total += ms.amount %>
 
         </tr>

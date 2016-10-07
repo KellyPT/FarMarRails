@@ -12,8 +12,6 @@
 
 <p><%= link_to "Return to full vendor list", vendors_path %></p>
 
-<h3>
+<p><h3><%= link_to "PRODUCTS", vendor_view_products_path(@vendor.id) %></h3></p>
 
-<%= link_to "PRODUCTS", vendor_view_products_path %></h3>
-
-<p>Add Sales: </p>
+<p><h3><%= link_to "SALES", vendor_sales_path(@vendor.id) %></h3></p>

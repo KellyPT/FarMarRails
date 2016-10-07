@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.all
+    @vendor = Vendor.find(params[:vendor_id])
+    @products = @vendor.products
   end
 
   def new
