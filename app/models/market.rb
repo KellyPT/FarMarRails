@@ -6,4 +6,5 @@ class Market < ActiveRecord::Base
   def all_vendors
     self.vendors
   end
+
 end
