@@ -6,21 +6,16 @@
 <th>Amount</th>
 <th>Purchase Time</th>
 </tr>
-  <%# @sales.where(vendor_id: @vendor.id).each do |s| %>
+<% total = 0 %>
   <% @sales.each do |s| %>
 
-    <!-- <p>
-      <li> -->
       <tr>
         <td><%= "$#{sprintf('%.2f' % (s.amount/100.0))}" %></td>
         <td><%= s.purchase_time %></td>
+        <% total += s.amount %>
       </tr>
 
-      <%#= link_to "Edit", edit_vendor_product_path(p) %>
-      <%#= link_to "Delete", vendor_product_path(p), method: :delete, data: { confirm: "Are you sure you want to delete the product?" } %>
-      <!-- </li>
-    </p> -->
     <% end %>
-<!-- </ul> -->
+  </table>
 
-<%#= link_to "Create a new product", new_vendor_product_path %>
+    <p><%= "Total sales: $#{ sprintf('%.2f' % (total/100.0)) }" %></p>

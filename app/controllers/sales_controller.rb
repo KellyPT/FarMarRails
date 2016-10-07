@@ -15,7 +15,7 @@ class SalesController < ApplicationController
     @sale = @vendor.sales.new(sale_params)
     if @sale.save
       # SAVED SUCCESSFULLY
-      redirect_to vendor_products_path
+      redirect_to vendor_sales_path
     else
       # DID NOT SAVE
       puts @sale.errors.messages
@@ -23,32 +23,10 @@ class SalesController < ApplicationController
     end
   end
 
-  # def edit
-  #   @vendor = Vendor.find(params[:vendor_id])
-  #   @product = Product.find(params[:id])
-  # end
-  #
-  # def update
-  #   @vendor = Vendor.find(params[:vendor_id])
-  #   @product = Product.find(params[:id])
-  #   if @product.update(prod_params)
-  #     # SUCCESS
-  #     redirect_to vendor_products_path
-  #   else
-  #     # NOPE
-  #     render :edit
-  #   end
-  # end
-  #
-  # def destroy
-  #   Product.find(params[:id]).destroy
-  #   redirect_to vendor_products_path
-  # end
-
   private
 
   def sale_params
-    params.require(:product).permit(:ref_id, :product_id, :vendor_id, :amount, :purchase_time)
+    params.require(:sale).permit(:ref_id, :product_id, :vendor_id, :amount, :purchase_time)
   end
 
 end

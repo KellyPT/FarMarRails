@@ -1,0 +1,15 @@
+<h1>Add a sale</h1>
+
+<%= form_for [@vendor, @sale] do |s| %>
+  <p><%= s.label :amount %>
+  <%= s.text_field :amount %></p>
+
+  <p>
+    <%= s.label "Purchase date" %>
+    <%= s.date_field :purchase_time %>
+  </p>
+
+  <p>
+    <%= s.submit "Submit" %>
+  </p>
+<% end %>
