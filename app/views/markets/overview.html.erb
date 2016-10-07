@@ -1,16 +1,7 @@
 <h1>FARMER MARKET</h1>
 
-<h2>View all Markets: go to Market index view</h2>
+<h2><%= link_to "View all Markets as a User", view_all_markets_path %></h2>
 
-<%= link_to "View all Markets as a User", view_all_markets_path %>
+<h2><%= link_to "View as a Market", markets_path %></h2>
 
-
-<h2>View as Market</h2>
-
-<%= link_to "View as a Market", markets_path %>
-
-<h3>TODO: update paths with revised views</h3>
-
-<h2>View as Vendor</h2>
-
-<%= link_to "View as a Vendor", vendors_path %>
+<h2><%= link_to "View as a Vendor", vendors_path %></h2>
