@@ -1,3 +1,5 @@
+/*Section A: Overall font, background image, header, footer, body's background container */
+
 * {
   font-family: 'Lora', serif;
 }
@@ -7,46 +9,104 @@ body {
   background-size: 100%;
 }
 
+header {
+  background-color: #F1F2F2;
+  opacity: 0.90;
+  border-radius: 20px;
+  /*color: red;*/
+  text-align: center;
+  font-weight: bolder;
+
+  margin-right: 30px;
+  margin-left: 30px;
+
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  }
+
+header h1 {
+  font-size: 40px;
+}
+
+header nav ul li {
+  font-size: 25px;
+
+  list-style-type: none;
+  display: inline-block;
+
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+header nav ul li a:link {
+  text-decoration: none;
+  color: red
+}
+
+header nav ul li a:visited {
+  color:  red;
+}
+
+.container {
+  margin-right: 30px;
+  margin-left: 30px;
+  margin-top: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  background-color: #F1F2F2;
+  opacity: 0.90;
+  border-radius: 20px;
+  }
+
+footer {
+  font-size: 15px;
+  text-align: center;
+  /*clear: both;*/
+  margin-top: 100px;
+  line-height: 0.5;
+}
+
+/*Section B: Content display for body's container*/
+
 h1 {
    text-align: center;
  }
 
-div.container {
-    margin-right: 30px;
-    margin-left: 30px;
-    margin-top: 100px;
-    padding-left: 15px;
-    padding-right: 15px;
-    background-color: #F1F2F2;
-    opacity: 0.90;
-    padding: 30px;
-  }
+/*Section C: This is the Overview page*/
 
-/*div {
-  background-color: #F1F2F2;
-  opacity: 0.95;
-  padding: 30px;
-}*/
-
-ul {
+.overview {
   text-align: center;
-  padding-top: 50px;
+  margin-top: 50px;
 }
 
-ul li {
-  font-size: 26px;
+.overview li {
+  font-size: 30px;
+
   list-style-type: none;
   display: inline-block;
+
   padding-left: 30px;
   padding-right: 30px;
+
+  border: 1px solid gray;
+  border-radius: 20px;
 }
 
-footer {
-  font-size: 14px;
-  font-weight: normal;
-  text-align: center;
-  clear: both;
+.overview li a:link {
+  text-decoration: none;
+  color: black;
 }
+
+.overview li a:visited {
+  text-decoration: none;
+  color: black;
+}
+
 
 
 /*

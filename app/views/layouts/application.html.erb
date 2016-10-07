@@ -9,19 +9,20 @@
 </head>
 <body>
   <header>
+    <h1>FARMAR DATABASE</h1>
     <nav>
-      <%= link_to "Home", root_path %>
-      <%= link_to "List of All Markets", view_all_markets_path %>
-      <%= link_to "Market Main Page", markets_path %>
-      <%= link_to "Vendor Main Page", vendors_path %>
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "List of All Markets", view_all_markets_path %></li>
+        <li><%= link_to "Market Main Page", markets_path %></li>
+        <li><%= link_to "Vendor Main Page", vendors_path %></li>
+      </ul>
     </nav>
   </header>
 
   <div class ="container">
     <%= yield %>
-  </div>
 
-  <div class ="container">
     <footer>
       <p>
         Webpage by Kelly & Danielle

@@ -8,17 +8,18 @@
   <%= link_to "Edit this Market entry", edit_market_path %>
 </p>
 
-<ul>
-  <li>ID: <%= @market.ref_id %> </li>
-  <li>Name: <%= @market.name %></li>
-  <li>Address: <%= @market.address %></li>
-  <li>City: <%= @market.city %></li>
-  <li>County: <%= @market.county %></li>
-  <li>State: <%= @market.state %></li>
-  <li>Zip: <%= @market.zip %></li>
-</ul>
 
-<p><%= link_to "Create a new Vendor", market_new_vendor_path %></p>
+  <p>ID: <%= @market.ref_id %> </p>
+  <p>Name: <%= @market.name %></p>
+  <p>Address: <%= @market.address %></p>
+  <p>City: <%= @market.city %></p>
+  <p>County: <%= @market.county %></p>
+  <p>State: <%= @market.state %></p>
+  <p>Zip: <%= @market.zip %></p>
+
+
 <p>
   <%= link_to "View all Vendors associated with this Market", market_view_vendors_path %>
 </p>
+
+<p><%= link_to "Create a new Vendor", market_new_vendor_path %></p>
