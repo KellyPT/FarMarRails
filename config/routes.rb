@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post '/markets/:id/vendors', to: 'markets#market_create_vendor', as: 'market_post_vendor'
 
   resources :vendors do
-    resources :products
+    resources :products, except: [:show]
     resources :sales, except: [:destroy, :update, :edit]
   end
 
