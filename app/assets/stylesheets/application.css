@@ -22,6 +22,12 @@ div.container {
     padding: 30px;
   }
 
+/*div {
+  background-color: #F1F2F2;
+  opacity: 0.95;
+  padding: 30px;
+}*/
+
 ul {
   text-align: center;
   padding-top: 50px;
@@ -35,12 +41,12 @@ ul li {
   padding-right: 30px;
 }
 
-/*div {
-  background-color: #F1F2F2;
-  opacity: 0.95;
-  padding: 30px;
-}*/
-
+footer {
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+  clear: both;
+}
 
 
 /*
