@@ -5,11 +5,17 @@
 </p>
 
 <%= link_to "Create a new Market entry here", new_market_path %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Update</th>
+  </tr>
 
-<p>
   <% @markets.each do |market| %>
-    <h3><%= "Market #{market.ref_id}: #{market.name}" %></h3>
-    <%= link_to "Details", market_path(market) %>
-    || <%= link_to "Edit", edit_market_path(market) %>
+    <tr>
+      <td><%= link_to "#{market.name}", market_path(market) %></td>
+      <td><%= link_to "Edit", edit_market_path(market) %></td>
+    </tr>
   <% end %>
 </p>
+</table>
