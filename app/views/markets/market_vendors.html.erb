@@ -7,12 +7,18 @@
 <p>
   <%= link_to "Return to #{@market.name}", market_path %>
 </p>
+
+<table>
+  <tr>
+    <td>Name</td>
+    <td>Number of Employees</td>
+  </tr>
 <% @vendors.each do |vendor| %>
-<ul>
-  <li>ID: <%= vendor.ref_id %> </li>
-  <li>Name: <%= vendor.name %></li>
-  <li>Number of Employees: <%= vendor.num_employees %></li>
+<tr>
+  <td><%= vendor.name %></td>
+  <td><%= vendor.num_employees %></td>
   <%= link_to "Edit a Vendor", edit_vendor_path(vendor) %>
   || <%= link_to "Delete a Vendor", vendor_path(vendor), method: :delete, data: { confirm: "Are you sure you want to delete the vendor?" } %>
-</ul>
+</tr>
 <% end %>
+</table
