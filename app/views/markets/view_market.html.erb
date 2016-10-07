@@ -5,7 +5,7 @@
 </p>
 
 <ul>
-  <li>ID: <%= @market.ref_id %> </li>
+  <!-- <li>ID: <%= @market.ref_id %> </li> -->
   <li>Name: <%= @market.name %></li>
   <li>Address: <%= @market.address %></li>
   <li>City: <%= @market.city %></li>
@@ -14,12 +14,13 @@
   <li>Zip: <%= @market.zip %></li>
 </ul>
 
-<h3>Vendors</h3>
-
+<table>
+  <tr>
+    <th>Vendors</th>
+  </tr>
 <% @vendors.each do |vendor| %>
-<ul>
-  <li>ID: <%= vendor.ref_id %> </li>
-  <li>Name: <%= vendor.name %></li>
-  <li>Number of Employees: <%= vendor.num_employees %></li>
-</ul>
+<tr>
+  <td><%= vendor.name %></td>
+</tr>
 <% end %>
+</table>
