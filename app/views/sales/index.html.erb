@@ -7,6 +7,7 @@
 <th>Purchase Time</th>
 </tr>
 <% total = 0 %>
+<% monthly_sales = [] %>
   <% @sales.each do |s| %>
 
       <tr>
@@ -15,7 +16,36 @@
         <% total += s.amount %>
       </tr>
 
+      <% if s.purchase_time > DateTime.now.at_beginning_of_month %>
+        <% monthly_sales << s %>
+      <% end %>
     <% end %>
   </table>
 
-    <p><%= "Total sales: $#{ sprintf('%.2f' % (total/100.0)) }" %></p>
+<p><%= "Total sales: $#{ sprintf('%.2f' % (total/100.0)) }" %></p>
+
+<p>
+  <h2>Sales this month:</h2>
+  <%#= @sales.find(:conditions => ["purchase_time > ?", 1.month.ago]) %>
+  <% if monthly_sales.count > 0 %>
+  <% monthly_total = 0 %>
+  <table>
+  <tr>
+  <th>Amount</th>
+  <th>Purchase Time</th>
+  </tr>
+    <% monthly_sales.each do |ms| %>
+        <tr>
+          <td><%= "$#{sprintf('%.2f' % (ms.amount/100.0))}" %></td>
+          <td><%= ms.purchase_time %></td>
+          <% monthly_total += ms.amount %>
+
+        </tr>
+      <% end %>
+    </table>
+
+    <p><%= "Monthly total: $#{ sprintf('%.2f' % (monthly_total/100.0)) }" %></p>
+
+  <% else %>
+    <%= "No sales so far this month" %>
+  <% end %>
