@@ -1,8 +1,4 @@
-<h1>List of Vendors associated with <%= @market.name %>, Market ID: <%= @market.ref_id %></h1>
-
-<p>
-  <%= link_to "Return to Markets Overview", markets_path %>
-</p>
+<h1>Vendors participating in <%= @market.name %></h1>
 
 <p>
   <%= link_to "Return to #{@market.name}", market_path %>
@@ -10,9 +6,9 @@
 
 <table>
   <tr>
-    <td>Name</td>
-    <td>Number of Employees</td>
-    <td>Update</td>
+    <th>Name</th>
+    <th>Number of Employees</th>
+    <th>Update</th>
   </tr>
 <% @vendors.each do |vendor| %>
 <tr>

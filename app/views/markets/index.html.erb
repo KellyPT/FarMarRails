@@ -1,19 +1,21 @@
-<h1>ALL MARKETS</h1>
+<h1>All Markets</h1>
 
 <p>
-  <%= link_to "Return to Homepage", root_path %>
+  <%= link_to "Create a new Market entry", new_market_path %>
 </p>
 
-<%= link_to "Create a new Market entry here", new_market_path %>
+
 <table>
   <tr>
     <th>Name</th>
+    <th>Details</th>
     <th>Update</th>
   </tr>
 
   <% @markets.each do |market| %>
     <tr>
-      <td><%= link_to "#{market.name}", market_path(market) %></td>
+      <td><%= market.name %></td>
+      <td><%= link_to "View", market_path(market) %></td>
       <td><%= link_to "Edit", edit_market_path(market) %></td>
     </tr>
   <% end %>
