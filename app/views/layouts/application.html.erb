@@ -8,20 +8,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
-    <h1>FARMAR DATABASE</h1>
-    <nav>
-      <ul>
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "List of All Markets", view_all_markets_path %></li>
-        <li><%= link_to "Market Main Page", markets_path %></li>
-        <li><%= link_to "Vendor Main Page", vendors_path %></li>
-      </ul>
-    </nav>
-  </header>
-
   <div class ="container">
-    <%= yield %>
+    <header>
+      <p>FARMAR DATABASE</p>
+      <nav>
+        <ul>
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "List of All Markets", view_all_markets_path %></li>
+          <li><%= link_to "Market Main Page", markets_path %></li>
+          <li><%= link_to "Vendor Main Page", vendors_path %></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <%= yield %>
+    </main>
 
     <footer>
       <p>
