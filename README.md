@@ -1,7 +1,6 @@
 # How to explore this code base:
-- This is a two-person project built in Ruby on Rails. 
-- To browse my team's code contribution, select branch `b/dis+kt/master` on the top-left drop-down menu.
-- Final deployment: https://limitless-meadow-23284.herokuapp.com/
+- This is a two-person project built in Ruby on Rails. To browse my team's code contribution, select branch `b/dis+kt/master` on the top-left drop-down menu.
+- Our team's final deployment: https://limitless-meadow-23284.herokuapp.com/
 
 # Project Name: FarMar Rails
 Build a database backend application to view, create, and manage farmers markets as well as their vendors, products, and sales.
